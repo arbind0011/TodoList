@@ -5,6 +5,10 @@
     padding: 0px;
     font-family: poppins, sans-serif;
 }
+body{
+    background-image: url(bg.jpg);
+    opacity: 90%;
+}
 
 .box {
     height: 110vh;
@@ -14,7 +18,7 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    background-image: url("bg.jpg");
+    /* background-image: url("bg.jpg"); */
 }
 
 .name {
@@ -49,12 +53,55 @@
     box-shadow: offset 0 0 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     background-color: #09c6d7;
-    opacity: 80%;
-    color: white;
+    opacity: 90%;
+    color: black;
     font-weight: bold;
+    position: relative;
 }
-#add-btn:hover {
-    background-color: #347ce8;
+#add-btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: 40px;
+    width: 100px;
+    background-color: azure;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    
+}
+
+#add-btn::before {
+    content: "";
+    background: linear-gradient(45deg, #D00000, #FFBA08, #3F88C5, #032B43, #136F63);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(10px);
+    animation: glowing 10s linear infinite;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 20px;
+    opacity: 1;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+#add-btn:hover::before {
+    opacity: 1;
+}
+#add-btn:active:after {
+    background: transparent;
+}
+#add-btn:active {
+    color: white;
+    font-weight: bolder;
+
 }
 
 #todo-list {
@@ -70,7 +117,6 @@
     height: 200px;
     width: 100vw;
     display: flex;
-    /* flex-wrap: wrap; */
     gap: 10px;
     justify-content: space-evenly;
     align-items: center;
@@ -115,14 +161,49 @@
 }
 
 .left {
-    background-color: grey;
-    opacity: 80%;
+    background-image: linear-gradient(#F1F7ED,#E0EEC6,#BCD8C1);
     border-radius: 10px; 
     height: 250px;
     width: 340px;
     margin-top: 5rem;
     padding: 15px;
-    overflow-y: auto;
+    position: relative;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+.left::after, .left::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), 
+    #FF0900, #A800FF, #0079FF, #00F11D, #FFEF00, #FF7F00, #FF0900 );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 4px;
+    border-radius: 15px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.left::before{
+    filter: blur(.5rem);
+    opacity: 0.7;
+    animation: rotate 2s linear infinite;
 }
 
 .left li, .right li, .in-progress li, .done li {
@@ -130,33 +211,3 @@
     margin-top: 10px;
 }
 
-.right {
-    border-radius: 10px;
-    height: 250px;
-    width: 340px;
-    margin-top: 5rem;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: grey;
-    opacity: 80%;
-}
-
-.in-progress {
-    background-color: #347ce8;
-    border-radius: 10px;
-    height: 250px;
-    width: 340px;
-    margin-top: 5rem;
-    padding: 15px;
-    overflow-y: auto;
-}
-
-.done {
-    background-image: linear-gradient(135deg , #4a90e2 0% ,#50e3c2 100%);
-    border-radius: 10px;
-    height: 250px;
-    width: 340px;
-    margin-top: 5rem;
-    padding: 15px;
-    overflow-y: auto;
-}
