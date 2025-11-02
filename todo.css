@@ -60,8 +60,7 @@ body{
     border: none;
     box-shadow: offset 0 0 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    background-color: #09c6d7;
-    opacity: 90%;
+    background-image: linear-gradient(rgb(201, 255, 255),rgb(165, 255, 255),#98f8ff,rgb(159, 255, 255),rgb(201, 255, 255));
     color: black;
     font-weight: bold;
     position: relative;
