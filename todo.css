@@ -6,7 +6,7 @@
     font-family: poppins, sans-serif;
 }
 body{
-    background-image: url(bg.jpg);
+    background-image: linear-gradient(to right, #00113c, #000000, #00113c);
     opacity: 90%;
 }
 
@@ -18,13 +18,23 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    /* background-image: url("bg.jpg"); */
 }
 
 .name {
     font-family: "Playwrite US Modern", cursive;
     font-optical-sizing: auto;
     font-style: normal;
+    color : rgb(255, 255, 255);
+    font-size: 50px;
+    text-shadow: 0 0 0.5rem rgb(255, 255, 255),
+                 0 0 1rem rgb(255, 255, 255),
+                 0 0 1.5rem rgb(255, 255, 255),
+                 0 0 2.5rem cyan,
+                 0 0 4rem cyan,
+                 0 0 5.5rem cyan,
+                 0 0 6rem cyan,
+                 0 0 9.5rem cyan; 
+    letter-spacing: 2px ;
 }
 
 #todos-input {
@@ -34,16 +44,14 @@ body{
     padding-left: 10px;
     border-radius: 10px;
     border: none;
-    box-shadow: offset 0 0 5px rgba(31, 142, 216, .9);
-    box-shadow: offset 0 0 5px rgba(110, 99, 255, .9);
+    box-shadow: 0 0 2px rgb(255, 255, 255),
+                0 0 4px rgb(255, 255, 255),
+                0 0 6px rgb(153, 210, 251),
+                0 0 15px rgb(185, 255, 246);
     outline: none;
-    opacity: 60%;
+    opacity: 90%;
 }
 
-#todos-input :focus{
-    box-shadow: 0 0 10px rgba(31, 142, 216, 0.8);
-    transform: scale(2.05);
-}
 
 #add-btn {
     height: 40px;
@@ -58,13 +66,14 @@ body{
     font-weight: bold;
     position: relative;
 }
+
 #add-btn::after {
     content: "";
     z-index: -1;
     position: absolute;
     height: 40px;
     width: 100px;
-    background-color: azure;
+    background-color: rgb(146, 243, 243);
     top: 0;
     left: 0;
     border-radius: 20px;
@@ -88,7 +97,7 @@ body{
     opacity: 1;
 }
 @keyframes glowing {
-    0% { background-position: 0 0; }
+    0% { background-position: 10% 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
@@ -211,3 +220,41 @@ body{
     margin-top: 10px;
 }
 
+#highPriority{
+    color : rgb(255, 255, 255);
+    text-shadow: rgb(255, 0, 0) 0px 0px 2px, 
+                 rgb(255, 0, 0) 0px 0px 4px, 
+                 rgb(255, 0, 0) 0px 0px 6px, 
+                 rgb(195, 0, 0) 0px 0px 8px;
+}
+
+#lowPriority{
+    color : rgb(255, 255, 255);
+    text-shadow: rgb(23, 6, 255) 0px 0px 2px, 
+                 rgb(32, 61, 255) 0px 0px 4px, 
+                 rgb(53, 90, 255) 0px 0px 6px, 
+                 rgb(0, 55, 255) 0px 0px 8px;
+}
+
+#inProgress{
+    color : rgb(255, 255, 255);
+    text-shadow: rgb(161, 131, 0) 0px 0px 2px, 
+                 rgb(255, 255, 32) 0px 0px 4px, 
+                 rgb(247, 255, 17) 0px 0px 6px, 
+                 rgb(255, 208, 0) 0px 0px 8px;
+}
+#inProgress{
+    color : rgb(255, 255, 255);
+    text-shadow: rgb(161, 131, 0) 0px 0px 2px, 
+                 rgb(255, 255, 32) 0px 0px 4px, 
+                 rgb(247, 255, 17) 0px 0px 6px, 
+                 rgb(255, 208, 0) 0px 0px 8px;
+}
+
+#Done{
+    color : rgb(255, 255, 255);
+    text-shadow: rgb(0, 255, 0) 0px 0px 2px, 
+                 rgb(0, 255, 128) 0px 0px 4px, 
+                 rgb(38, 255, 0) 0px 0px 6px, 
+                 rgb(5, 162, 0) 0px 0px 8px;
+}
