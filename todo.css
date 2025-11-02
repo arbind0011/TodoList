@@ -52,6 +52,13 @@ body{
     opacity: 90%;
 }
 
+#todos-input:hover{
+    box-shadow: 0 0 2px rgb(255, 255, 255),
+                0 0 4px rgb(123, 215, 255),
+                0 0 6px rgb(31, 157, 247),
+                0 0 25px rgb(1, 255, 221);    
+}
+
 
 #add-btn {
     height: 40px;
@@ -159,13 +166,13 @@ body{
     border: none;
     box-shadow: offset 0 0 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    background-color: #ec2929;
+    background-image: linear-gradient(#ff5e5e,rgb(255, 43, 43),rgb(255, 0, 0),rgb(255, 43, 43),#ff5e5e);
     color: white;
     font-weight: bold;
 }
 
 .todo-item button:hover {
-    background-color: #a81313;
+    background-image: linear-gradient(#c90000,rgb(209, 0, 0),rgb(197, 0, 0),rgb(203, 0, 0),#c70000);
 }
 
 .left {
