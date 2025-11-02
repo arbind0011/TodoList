@@ -173,7 +173,7 @@ body{
     background-image: linear-gradient(#F1F7ED,#E0EEC6,#BCD8C1);
     border-radius: 10px; 
     height: 250px;
-    width: 340px;
+    width: 300px;
     margin-top: 5rem;
     padding: 15px;
     position: relative;
@@ -218,6 +218,7 @@ body{
 .left li, .right li, .in-progress li, .done li {
     list-style-type: none;
     margin-top: 10px;
+    width: 16rem;
 }
 
 #highPriority{
@@ -236,13 +237,6 @@ body{
                  rgb(0, 55, 255) 0px 0px 8px;
 }
 
-#inProgress{
-    color : rgb(255, 255, 255);
-    text-shadow: rgb(161, 131, 0) 0px 0px 2px, 
-                 rgb(255, 255, 32) 0px 0px 4px, 
-                 rgb(247, 255, 17) 0px 0px 6px, 
-                 rgb(255, 208, 0) 0px 0px 8px;
-}
 #inProgress{
     color : rgb(255, 255, 255);
     text-shadow: rgb(161, 131, 0) 0px 0px 2px, 
