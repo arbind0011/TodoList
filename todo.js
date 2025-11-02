@@ -1,6 +1,6 @@
 // Select DOM elememts
 const input = document.getElementById('todos-input')
-const addBtn = document.getElementById('add-btn') // Corrected this line
+const addBtn = document.getElementById('add-btn') 
 const todoList = document.getElementById('todo-list');
 const highPriorityList = document.getElementById('high-priority');
 const lowPriorityList = document.getElementById('low-priority');
